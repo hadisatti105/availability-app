@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Availability Checker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>Check Availability</h1>
+
+    <form id="form">
+      <input type="text" id="phone" placeholder="Phone (e.g. 5551234567)" required />
+      <input type="text" id="state" placeholder="State (e.g. CA)" maxlength="2" required />
+      <input type="text" id="zip" placeholder="ZIP Code" maxlength="5" required />
+
+      <button type="submit">Check</button>
+    </form>
+
+    <div id="loading" class="hidden">Checking...</div>
+
+    <pre id="result"></pre>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
