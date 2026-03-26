@@ -9,13 +9,12 @@ form.addEventListener("submit", async (e) => {
   const state = document.getElementById("state").value.trim().toUpperCase();
   const zip = document.getElementById("zip").value.trim();
 
-  // Validation
   if (!/^\d{10}$/.test(phone)) {
     return alert("Phone must be 10 digits");
   }
 
   if (!/^[A-Z]{2}$/.test(state)) {
-    return alert("State must be 2 letters (e.g. CA)");
+    return alert("State must be 2 letters");
   }
 
   if (!/^\d{5}$/.test(zip)) {
@@ -27,7 +26,7 @@ form.addEventListener("submit", async (e) => {
 
   try {
     const response = await fetch(
-      `http://localhost:3000/api/check?phone=${phone}&state=${state}&zip=${zip}`
+      `https://availability-app-u85x.onrender.com/api/check?phone=${phone}&state=${state}&zip=${zip}`
     );
 
     const data = await response.json();
